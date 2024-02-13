@@ -95,7 +95,7 @@ if selected_topic:
             if user_answer == options["correct_answer"]:
                 score += 1
 
-    st.write(f"Your score: {score}/{total_questions}")
+    st.title(f"Your score: {score}/{total_questions}")
 
 # Layout for "Next" and "Back" buttons
 col1, col2, _ = st.columns([1, 7, 1])
