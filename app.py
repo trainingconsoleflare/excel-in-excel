@@ -5,15 +5,24 @@ topics_data = {
     "What is Excel": {
         "video_link": "https://youtu.be/6guuTX1Ml8U",
         "questions": {
-            "How many rows can excel handle": {
+            "How many rows can Excel handle?": {
                 "type": "multiselect",
-                "options": ["Select","10 Million +", "11 Million +", "20 Million +"],
+                "options": ["Select", "10 Million +", "11 Million +", "20 Million +"],
                 "correct_answers": ["10 Million +"]
             },
             "Excel works with tabular data format": {
                 "type": "radio",
-                "options": ["Select","True", "False"],
-                "correct_answer": "Go to View tab and select Freeze Panes"
+                "options": ["Select", "True", "False"],
+                "correct_answer": "True"
+            },
+            "What is the best feature of Excel?": {
+                "type": "text",
+                "correct_answer": "Pivot tables"
+            },
+            "On a scale of 1 to 10, how much do you like Excel?": {
+                "type": "slider",
+                "options": list(range(11)),
+                "correct_answer": 10
             }
         }
     },
@@ -22,13 +31,18 @@ topics_data = {
         "questions": {
             "What does VLOOKUP function do?": {
                 "type": "radio",
-                "options": ["Returns the maximum value from a range", "Searches for a value in the first column of a table and returns a value in the same row from another column", "Counts the number of cells that contain numbers"],
+                "options": ["Select", "Returns the maximum value from a range", "Searches for a value in the first column of a table and returns a value in the same row from another column", "Counts the number of cells that contain numbers"],
                 "correct_answer": "Searches for a value in the first column of a table and returns a value in the same row from another column"
             },
             "How do you lock a cell reference in a formula?": {
                 "type": "checkbox",
                 "options": ["$A$1", "$A1", "A$1", "None of the above"],
                 "correct_answers": ["$A$1"]
+            },
+            "What is the Excel function to count cells?": {
+                "type": "dropdown",
+                "options": ["Select", "COUNT", "COUNTA", "COUNTIF"],
+                "correct_answer": "COUNT"
             }
         }
     }
@@ -63,6 +77,18 @@ if selected_topic:
         elif options["type"] == "checkbox":
             user_answers = st.checkbox("Select correct answers", options["options"])
             if user_answers == options["correct_answers"]:
+                score += 1
+        elif options["type"] == "text":
+            user_answer = st.text_input("Your answer:")
+            if user_answer.lower() == options["correct_answer"].lower():
+                score += 1
+        elif options["type"] == "slider":
+            user_answer = st.slider("Select a value", min_value=0, max_value=len(options["options"]) - 1, step=1)
+            if options["options"][user_answer] == options["correct_answer"]:
+                score += 1
+        elif options["type"] == "dropdown":
+            user_answer = st.selectbox("Select your answer", options["options"])
+            if user_answer == options["correct_answer"]:
                 score += 1
 
     st.write(f"Your score: {score}/{total_questions}")
