@@ -48,8 +48,12 @@ topics_data = {
     }
 }
 
+# Initialize session state variables
+if 'topic_idx' not in st.session_state:
+    st.session_state.topic_idx = 0
+
 # Sidebar dropdown to select the topic
-selected_topic = st.sidebar.selectbox("Select Excel Topic", list(topics_data.keys()))
+selected_topic = st.sidebar.selectbox("Select Excel Topic", list(topics_data.keys()), index=st.session_state.topic_idx)
 
 # Display video for the selected topic
 st.header("Excel Topic Video")
@@ -92,3 +96,18 @@ if selected_topic:
                 score += 1
 
     st.write(f"Your score: {score}/{total_questions}")
+
+# Layout for "Next" and "Back" buttons
+col1, col2, _ = st.columns([1, 7, 1])
+
+# Button to go to the next topic
+next_topic_idx = st.session_state.topic_idx + 1
+if next_topic_idx < len(topics_data):
+    if col2.button("Next", key="next_button", on_click=lambda: st.session_state.update(topic_idx=next_topic_idx)):
+        st.session_state.topic_idx = next_topic_idx
+
+# Button to go to the previous topic
+prev_topic_idx = st.session_state.topic_idx - 1
+if prev_topic_idx >= 0:
+    if col1.button("Back", key="back_button", on_click=lambda: st.session_state.update(topic_idx=prev_topic_idx)):
+        st.session_state.topic_idx = prev_topic_idx
