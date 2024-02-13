@@ -35,7 +35,7 @@ topics_data = {
                 "correct_answer": "Searches for a value in the first column of a table and returns a value in the same row from another column"
             },
             "How do you lock a cell reference in a formula?": {
-                "type": "checkbox",
+                "type": "multiselect",  # Change to multiselect for checkboxes
                 "options": ["$A$1", "$A1", "A$1", "None of the above"],
                 "correct_answers": ["$A$1"]
             },
@@ -78,8 +78,8 @@ if selected_topic:
             user_answer = st.radio("Select your answer", options["options"])
             if user_answer == options["correct_answer"]:
                 score += 1
-        elif options["type"] == "checkbox":
-            user_answers = st.checkbox("Select correct answers", options["options"])
+        elif options["type"] == "checkbox":  # Change this to multiselect
+            user_answers = st.multiselect("Select correct answers", options["options"])
             if user_answers == options["correct_answers"]:
                 score += 1
         elif options["type"] == "text":
@@ -105,6 +105,7 @@ next_topic_idx = st.session_state.topic_idx + 1
 if next_topic_idx < len(topics_data):
     if col2.button("Next", key="next_button", on_click=lambda: st.session_state.update(topic_idx=next_topic_idx)):
         st.session_state.topic_idx = next_topic_idx
+
 
 # Button to go to the previous topic
 prev_topic_idx = st.session_state.topic_idx - 1
