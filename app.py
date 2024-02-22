@@ -9,18 +9,20 @@ topics_data = {
             "How many rows can Excel handle?": {
                 "type": "multiselect",
                 "options": ["Select", "10 Million +", "11 Million +", "20 Million +"],
-                "correct_answers": ["10 Million +"]
+                "correct_answers": ["10 Million +"],
+                "hint":"Excel has 1048576 rows"
             },
             "Excel works with tabular data format": {
                 "type": "radio",
                 "options": ["Select", "True", "False"],
-                "correct_answer": "True"
+                "correct_answer": "True",
+                "hint": "Excel is primarily designed for working with tabular data."
             },
-            
             "How many columns excel have ? ": {
                 "type": "slider",
                 "options": list(range(20000)),
-                "correct_answer": 16384
+                "correct_answer": 16384,
+                "hint": "Excel has a maximum of 16,384 columns."
             }
         }
     },
@@ -48,7 +50,53 @@ topics_data = {
                 "options": ["Select", "=", "==","--"],
                 "correct_answer": "="
             },
-            
+        }
+    },
+    "Navigation In Excel": {
+        "video_link": "https://youtu.be/AxV2HEMD7G0",
+        "share_drive_link": "Link to Excel Formulas notes",
+        "questions": {
+            "Ribbon by default contains how many options": {
+                "type": "dropdown",
+                "options": ["Select", "7","9","11"],
+                "correct_answer": "9"
+            },
+            "If a value is at E column and 10th row, What will be its cell reference ? ": {
+                "type": "radio",
+                "options": ["Select", "10E", "E10"],
+                "correct_answer": "E10"
+            },
+            "To apply formulae in each cell , what should we click on": {
+                "type": "radio",
+                "options": ["Select", "square box", "enter"],
+                "correct_answer": "square box"
+            },
+        }
+    },
+    "Working With Tables": {
+        "video_link": "https://youtu.be/oco_yyCh7Sc",
+        "share_drive_link": "Link to Excel Formulas notes",
+        "questions": {
+            "What option do we use to convert data into an excel table ? ": {
+                "type": "dropdown",
+                "options": ["Select", "Format as Table","Table Design","Format"],
+                "correct_answer": "Format as Table"
+            },
+            "If i want to insert a column anywhere in excel, what will we do": {
+                "type": "radio",
+                "options": ["Select", "right click and choose insert", "right click and choose  add column"],
+                "correct_answer": "right click and choose insert"
+            },
+            "Suppose your manager wants to know the number of orders from Amazon Only.Apply filter and report the number of orders from Amazon.": {
+                "type": "dropdown",
+                "options": ["Select", "1999", "2000","950"],
+                "correct_answer": "950"
+            },
+             "Suppose your manager wants to know the number of orders from Amazon Only.Apply filter and report the number of orders from Amazon.": {
+                "type": "dropdown",
+                "options": ["Select", "1999", "2000","950"],
+                "correct_answer": "950"
+            },
         }
     }
 }
@@ -82,7 +130,7 @@ if selected_topic:
         st.subheader(question)
         if options["type"] == "multiselect":
             user_answers = st.multiselect("Select all correct answers", options["options"])
-            if user_answers == options["correct_answers"]:
+            if set(user_answers) == set(options["correct_answers"]):  # Check if the sets match
                 score += 1
         elif options["type"] == "radio":
             user_answer = st.radio(f"Select your answer_{i}", options["options"])
@@ -90,7 +138,7 @@ if selected_topic:
                 score += 1
         elif options["type"] == "checkbox":  # Change this to multiselect
             user_answers = st.multiselect("Select correct answers", options["options"])
-            if user_answers == options["correct_answers"]:
+            if set(user_answers) == set(options["correct_answers"]):  # Check if the sets match
                 score += 1
         elif options["type"] == "text":
             user_answer = st.text_input("Your answer:")
@@ -101,9 +149,14 @@ if selected_topic:
             if options["options"][user_answer] == options["correct_answer"]:
                 score += 1
         elif options["type"] == "dropdown":
-            user_answer = st.selectbox("Select your answer", options["options"])
+            user_answer = st.selectbox("Select your answer", options["options"], index=0 if "Select" in options["options"] else 1)  # Set default index based on options
             if user_answer == options["correct_answer"]:
                 score += 1
+        
+        # Hint box
+        if "hint" in options:  # Check if hint is provided
+            if st.checkbox(f"Need a hint?_{i}"):
+                st.write(options["hint"])
 
     st.title(f"Your score: {score}/{total_questions}")
 
