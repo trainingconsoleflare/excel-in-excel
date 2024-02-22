@@ -1,9 +1,10 @@
 import streamlit as st
 
-# Define a dictionary mapping topics to their corresponding questions and video links
+# Define a dictionary mapping topics to their corresponding questions, video links, and share drive links
 topics_data = {
     "What is Excel": {
         "video_link": "https://youtu.be/6guuTX1Ml8U",
+        "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EXcN4q_Pe8hGo1qs0f2QtuYBcKBPSfRINx2wfyVPKRun5Q?e=Tv0OS5",
         "questions": {
             "How many rows can Excel handle?": {
                 "type": "multiselect",
@@ -15,35 +16,39 @@ topics_data = {
                 "options": ["Select", "True", "False"],
                 "correct_answer": "True"
             },
-            "What is the best feature of Excel?": {
-                "type": "text",
-                "correct_answer": "Pivot tables"
-            },
-            "On a scale of 1 to 10, how much do you like Excel?": {
+            
+            "How many columns excel have ? ": {
                 "type": "slider",
-                "options": list(range(11)),
-                "correct_answer": 10
+                "options": list(range(20000)),
+                "correct_answer": 16384
             }
         }
     },
-    "Excel Formulas": {
+    "Excel Basic Terminology": {
         "video_link": "https://youtu.be/sQgG1htIVCo",
+        "share_drive_link": "Link to Excel Formulas notes",
         "questions": {
-            "What does VLOOKUP function do?": {
+            "Cell in Excel is formed at the intersection of rows and columns": {
                 "type": "radio",
-                "options": ["Select", "Returns the maximum value from a range", "Searches for a value in the first column of a table and returns a value in the same row from another column", "Counts the number of cells that contain numbers"],
-                "correct_answer": "Searches for a value in the first column of a table and returns a value in the same row from another column"
+                "options": ["Select", "True","False"],
+                "correct_answer": "True"
             },
-            "How do you lock a cell reference in a formula?": {
-                "type": "multiselect",  # Change to multiselect for checkboxes
-                "options": ["$A$1", "$A1", "A$1", "None of the above"],
-                "correct_answers": ["$A$1"]
+            "Active Cell is the cell that we are currently working on": {
+                "type": "radio",
+                "options": ["Select", "True", "False"],
+                "correct_answer": "True"
             },
-            "What is the Excel function to count cells?": {
-                "type": "dropdown",
-                "options": ["Select", "COUNT", "COUNTA", "COUNTIF"],
-                "correct_answer": "COUNT"
-            }
+             "Minimum number of cell to create a range ? ": {
+                "type": "slider",
+                "options": list(range(4)),
+                "correct_answer": 2
+            },
+            "Each formula in excel starts with": {
+                "type": "radio",
+                "options": ["Select", "=", "==","--"],
+                "correct_answer": "="
+            },
+            
         }
     }
 }
@@ -60,6 +65,11 @@ st.header("Excel Topic Video")
 if selected_topic:
     st.video(topics_data[selected_topic]["video_link"])
 
+# Display share drive link for the selected topic
+st.header("Excel Notes")
+if selected_topic:
+    st.write(f"Notes for {selected_topic}: [{topics_data[selected_topic]['share_drive_link']}]({topics_data[selected_topic]['share_drive_link']})")
+
 # Display questions for the selected topic
 st.header("Practice Questions")
 if selected_topic:
@@ -68,14 +78,14 @@ if selected_topic:
     total_questions = len(questions)
     score = 0
 
-    for question, options in questions.items():
+    for i, (question, options) in enumerate(questions.items()):
         st.subheader(question)
         if options["type"] == "multiselect":
             user_answers = st.multiselect("Select all correct answers", options["options"])
             if user_answers == options["correct_answers"]:
                 score += 1
         elif options["type"] == "radio":
-            user_answer = st.radio("Select your answer", options["options"])
+            user_answer = st.radio(f"Select your answer_{i}", options["options"])
             if user_answer == options["correct_answer"]:
                 score += 1
         elif options["type"] == "checkbox":  # Change this to multiselect
