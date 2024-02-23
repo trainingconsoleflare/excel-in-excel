@@ -129,15 +129,11 @@ topics_data = {
     }
 }
 
-# Initialize session state variables
-if 'topic_idx' not in st.session_state:
-    st.session_state.topic_idx = 0
-
 # Sidebar dropdown to select the topic
-selected_topic = st.sidebar.selectbox("Select Excel Topic", list(topics_data.keys()), index=st.session_state.topic_idx)
+selected_topic = st.sidebar.selectbox("Select Excel Topic", list(topics_data.keys()))
 
 # Display video for the selected topic
-st.header("Excel Topic Video")
+st.header(selected_topic)
 if selected_topic:
     st.video(topics_data[selected_topic]["video_link"])
 
@@ -166,18 +162,15 @@ if selected_topic:
             if user_answer is not None:  # Check if user has selected an answer
                 if user_answer == options["correct_answer"]:
                     score += 1
-                st.write("Your answer is correct!" if user_answer == options["correct_answer"] else "Incorrect answer!")
         elif options["type"] == "slider":
             user_answer = st.slider("Select a value", min_value=0, max_value=len(options["options"]) - 1, step=1)
             if options["options"][user_answer] == options["correct_answer"]:
                 score += 1
         elif options["type"] == "dropdown":
-            unique_key = f"{selected_topic}_{question}_{i}"  # Unique key for each selectbox
-            user_answer = st.selectbox("Select your answer", options["options"], key=unique_key, index=0 if "Select" in options["options"] else 1)  # Set default index based on options
+            user_answer = st.selectbox("Select your answer", options["options"])
             if user_answer is not None:  # Check if user has selected an answer
                 if user_answer == options["correct_answer"]:
                     score += 1
-                st.write("Your answer is correct!" if user_answer == options["correct_answer"] else "Incorrect answer!")
 
         # Validate user's answer
         if user_answer is not None:
@@ -191,19 +184,3 @@ if selected_topic:
                 st.write(options["hint"])
 
     st.title(f"Your score: {score}/{total_questions}")
-
-# Layout for "Next" and "Back" buttons
-col1, col2, _ = st.columns([1, 7, 1])
-
-# Button to go to the next topic
-next_topic_idx = st.session_state.topic_idx + 1
-if next_topic_idx < len(topics_data):
-    if col2.button("Next", key="next_button", on_click=lambda: st.session_state.update(topic_idx=next_topic_idx)):
-        st.session_state.topic_idx = next_topic_idx
-
-
-# Button to go to the previous topic
-prev_topic_idx = st.session_state.topic_idx - 1
-if prev_topic_idx >= 0:
-    if col1.button("Back", key="back_button", on_click=lambda: st.session_state.update(topic_idx=prev_topic_idx)):
-        st.session_state.topic_idx = prev_topic_idx
