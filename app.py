@@ -211,10 +211,6 @@
 
 
 
-
-
-
-
 import streamlit as st
 
 # Define a dictionary mapping topics to their corresponding questions, video links, and share drive links
@@ -274,6 +270,118 @@ topics_data = {
             },
         }
     },
+     "Navigation In Excel": {
+        "video_link": "https://youtu.be/AxV2HEMD7G0",
+        "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EWkmqT_bb4tBiItzJ64bFv0BaxyuSbKQ2dw186MDYVjcsg?e=40Qvvc",
+         "notes_embed_code": """<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9O5RVQ3M&#x2F;MMZIBNN1x7bGa__Pdz4m6w&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9O5RVQ3M&#x2F;MMZIBNN1x7bGa__Pdz4m6w&#x2F;view?utm_content=DAF9O5RVQ3M&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Navigating In Excel</a> by Console Flare""",
+        "questions": {
+            "Ribbon by default contains how many options": {
+                "type": "dropdown",
+                "options": ["Select", "7", "9", "11"],
+                "correct_answer": "9",
+                "hint": 'There are 9 tabs in ribbon.'
+            },
+            "If a value is at E column and 10th row, What will be its cell reference ? ": {
+                "type": "radio",
+                "options": ["Select", "10E", "E10"],
+                "correct_answer": "E10",
+                "hint": 'Cell reference is always the combination of Column and Row name'
+            },
+            "To apply formulae in each cell , what should we click on": {
+                "type": "radio",
+                "options": ["Select", "square box", "enter"],
+                "correct_answer": "square box",
+                "hint": 'Square Box'
+            },
+        }
+    },
+    "Working With Tables": {
+        "video_link": "https://youtu.be/oco_yyCh7Sc",
+        "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EarbaAXNDhRMtSaK2OcNZCgBgoWonmTJl4lCXCoJiHeiSg?e=5naQwm",
+        "notes_embed_code":"""<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9TVG7sYU&#x2F;QRQkLgNWY0uj_lkjytJPaQ&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9TVG7sYU&#x2F;QRQkLgNWY0uj_lkjytJPaQ&#x2F;view?utm_content=DAF9TVG7sYU&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Working With Tables</a> by Console Flare""",
+        "questions": {
+            "What option do we use to convert data into an excel table ? ": {
+                "type": "dropdown",
+                "options": ["Select", "Format as Table", "Table Design", "Format"],
+                "correct_answer": "Format as Table",
+                "hint": "Under Home tab, There is an option know as format as table, we will always use it to convert it to table"
+            },
+            "If i want to insert a column anywhere in excel, what will we do": {
+                "type": "radio",
+                "options": ["Select", "right click and choose insert", "right click and choose add column"],
+                "correct_answer": "right click and choose insert"
+            },
+            "Suppose your manager wants to know the number of orders from Amazon Only.report the number of orders from Amazon.": {
+                "type": "dropdown",
+                "options": ["Select", "1999", "2000", "950"],
+                "correct_answer": "950",
+                "hint": "Apply Filter on Retailer."
+            }
+
+        }
+    },
+    "Aggregation and Calculation": {
+        "video_link": "https://youtu.be/C-gqG7UelbA",
+        "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EdjGz6Fn2ZtOvWUXB1_nmNQBZdYXYONhpuGp_YWhK0ItVA?e=ST7RfI",
+        "notes_embed_code":"""<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9UfqWTpE&#x2F;1D8vEErXwvnv7QD8ita-eg&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9UfqWTpE&#x2F;1D8vEErXwvnv7QD8ita-eg&#x2F;view?utm_content=DAF9UfqWTpE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Aggregation and Calculation</a> by Console Flare""",
+        "questions": {
+            "What option do we use to convert data into an excel table ? ": {
+                "type": "dropdown",
+                "options": ["Select", "Format as Table", "Table Design", "Format"],
+                "correct_answer": "Format as Table",
+                "hint": "Under Home tab, There is an option know as format as table, we will always use it to convert it to table"
+            },
+            "If i want to insert a column anywhere in excel, what will we do": {
+                "type": "radio",
+                "options": ["Select", "right click and choose insert", "right click and choose add column"],
+                "correct_answer": "right click and choose insert"
+            },
+            "Suppose your manager wants to know the number of orders from Amazon Only.report the number of orders from Amazon.": {
+                "type": "dropdown",
+                "options": ["Select", "1999", "2000", "950"],
+                "correct_answer": "950",
+                "hint": "Apply Filter on Retailer."
+            }
+
+        }
+    },
+    "Totals and Subtotals": {
+        "video_link": "https://youtu.be/XV_ZUj-y7g0",
+        "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EdjGz6Fn2ZtOvWUXB1_nmNQBZdYXYONhpuGp_YWhK0ItVA?e=ST7RfI",
+        "notes_embed_code":"""<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9UfqWTpE&#x2F;1D8vEErXwvnv7QD8ita-eg&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9UfqWTpE&#x2F;1D8vEErXwvnv7QD8ita-eg&#x2F;view?utm_content=DAF9UfqWTpE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Aggregation and Calculation</a> by Console Flare""",
+        "questions": {
+            "What option do we use to convert data into an excel table ? ": {
+                "type": "dropdown",
+                "options": ["Select", "Format as Table", "Table Design", "Format"],
+                "correct_answer": "Format as Table",
+                "hint": "Under Home tab, There is an option know as format as table, we will always use it to convert it to table"
+            },
+            "If i want to insert a column anywhere in excel, what will we do": {
+                "type": "radio",
+                "options": ["Select", "right click and choose insert", "right click and choose add column"],
+                "correct_answer": "right click and choose insert"
+            },
+            "Suppose your manager wants to know the number of orders from Amazon Only.report the number of orders from Amazon.": {
+                "type": "dropdown",
+                "options": ["Select", "1999", "2000", "950"],
+                "correct_answer": "950",
+                "hint": "Apply Filter on Retailer."
+            }
+
+        }
+    }
 
 }
     # Other topics follow...
@@ -334,11 +442,6 @@ if selected_topic:
                 st.write(options["hint"])
 
     st.title(f"Your score: {score}/{total_questions}")
-
-
-
-
-
 
 
 
