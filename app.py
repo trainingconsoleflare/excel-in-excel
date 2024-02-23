@@ -126,6 +126,30 @@ topics_data = {
             }
 
         }
+    },
+    "Totals and Subtotals": {
+        "video_link": "https://youtu.be/XV_ZUj-y7g0",
+        "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EdjGz6Fn2ZtOvWUXB1_nmNQBZdYXYONhpuGp_YWhK0ItVA?e=ST7RfI",
+        "questions": {
+            "What option do we use to convert data into an excel table ? ": {
+                "type": "dropdown",
+                "options": ["Select", "Format as Table", "Table Design", "Format"],
+                "correct_answer": "Format as Table",
+                "hint": "Under Home tab, There is an option know as format as table, we will always use it to convert it to table"
+            },
+            "If i want to insert a column anywhere in excel, what will we do": {
+                "type": "radio",
+                "options": ["Select", "right click and choose insert", "right click and choose add column"],
+                "correct_answer": "right click and choose insert"
+            },
+            "Suppose your manager wants to know the number of orders from Amazon Only.report the number of orders from Amazon.": {
+                "type": "dropdown",
+                "options": ["Select", "1999", "2000", "950"],
+                "correct_answer": "950",
+                "hint": "Apply Filter on Retailer."
+            }
+
+        }
     }
 }
 
