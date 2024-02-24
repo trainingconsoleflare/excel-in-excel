@@ -187,6 +187,7 @@ topics_data = {
       src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9bFAd4wQ&#x2F;GJpB2Hxu2eyjRDlrsbdFLw&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
     </iframe>
     <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9bFAd4wQ&#x2F;GJpB2Hxu2eyjRDlrsbdFLw&#x2F;view?utm_content=DAF9bFAd4wQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Data Validation</a> by Console Flare""",
+        "questions": {
             "What option do we use to convert data into an excel table ? ": {
                 "type": "dropdown",
                 "options": ["Select", "Format as Table", "Table Design", "Format"],
