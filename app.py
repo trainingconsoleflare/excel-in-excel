@@ -179,6 +179,34 @@ topics_data = {
             }
 
         }
+    },
+    "Data Validation": {
+        "video_link": "https://youtu.be/4Q-aWCRouis",
+        "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EdjGz6Fn2ZtOvWUXB1_nmNQBZdYXYONhpuGp_YWhK0ItVA?e=ST7RfI",
+        "notes_embed_code":"""<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9bFAd4wQ&#x2F;GJpB2Hxu2eyjRDlrsbdFLw&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9bFAd4wQ&#x2F;GJpB2Hxu2eyjRDlrsbdFLw&#x2F;view?utm_content=DAF9bFAd4wQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Data Validation</a> by Console Flare""",
+        "questions": {
+            "What option do we use to convert data into an excel table ? ": {
+                "type": "dropdown",
+                "options": ["Select", "Format as Table", "Table Design", "Format"],
+                "correct_answer": "Format as Table",
+                "hint": "Under Home tab, There is an option know as format as table, we will always use it to convert it to table"
+            },
+            "If i want to insert a column anywhere in excel, what will we do": {
+                "type": "radio",
+                "options": ["Select", "right click and choose insert", "right click and choose add column"],
+                "correct_answer": "right click and choose insert"
+            },
+            "Suppose your manager wants to know the number of orders from Amazon Only.report the number of orders from Amazon.": {
+                "type": "dropdown",
+                "options": ["Select", "1999", "2000", "950"],
+                "correct_answer": "950",
+                "hint": "Apply Filter on Retailer."
+            }
+
+        }
     }
 
  
