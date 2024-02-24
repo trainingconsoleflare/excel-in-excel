@@ -11,9 +11,9 @@ topics_data = {
     <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9sGjoscE&#x2F;tZsnSI4oFVkphT3TH0fNrg&#x2F;view?utm_content=DAF9sGjoscE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Excel Fundamentals</a> by Console Flare""",
         "questions": {
             "How many rows can Excel handle?": {
-                "type": "multiselect",
+                "type": "radio",
                 "options": ["Select", "10 Million +", "11 Million +", "20 Million +"],
-                "correct_answers": ["10 Million +"],
+                "correct_answers": "10 Million +",
                 "hint": "Excel has 1048576 rows"
             },
             "Excel works with tabular data format": {
@@ -55,9 +55,9 @@ topics_data = {
                 "correct_answer": "True"
             },
             "Minimum number of cells to create a range?": {
-                "type": "slider",
-                "options": list(range(1, 6)),
-                "correct_answer": 2,
+                "type": "radio",
+                "options": ["Select","1","2","3","5"],
+                "correct_answer": "2",
                 "hint": 'A range consists of more than one cell'
             },
             "Each formula in excel starts with": {
@@ -202,7 +202,8 @@ def display_questions(questions):
             elif "Select" not in user_answers:  # Don't show incorrect if default is not selected
                 st.error("Incorrect!")
         elif options["type"] == "radio":
-            user_answer = st.radio("Select your answer", options["options"])
+            radio_key = f"{question}_radio_{i}"
+            user_answer = st.radio("Select your answer", options["options"],key=radio_key)
             if user_answer == options["correct_answer"]:
                 st.success("Correct!")
                 score += 1
