@@ -184,9 +184,9 @@ topics_data = {
         "video_link": "https://youtu.be/4Q-aWCRouis",
         "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EdjGz6Fn2ZtOvWUXB1_nmNQBZdYXYONhpuGp_YWhK0ItVA?e=ST7RfI",
         "notes_embed_code":"""<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
-      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9bFAd4wQ&#x2F;GJpB2Hxu2eyjRDlrsbdFLw&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9s7BSMms&#x2F;D_l34AklubPmCB1eMPwDEw&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
     </iframe>
-    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9bFAd4wQ&#x2F;GJpB2Hxu2eyjRDlrsbdFLw&#x2F;view?utm_content=DAF9bFAd4wQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Data Validation</a> by Console Flare""",
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9s7BSMms&#x2F;D_l34AklubPmCB1eMPwDEw&#x2F;view?utm_content=DAF9s7BSMms&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Understanding House Prices</a> by Console Flare""",
         "questions": {
             "What option do we use to convert data into an excel table ? ": {
                 "type": "dropdown",
