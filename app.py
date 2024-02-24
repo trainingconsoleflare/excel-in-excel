@@ -218,7 +218,10 @@ topics_data = {
     "What is Excel": {
         "video_link": "https://youtu.be/6guuTX1Ml8U",
         "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EXcN4q_Pe8hGo1qs0f2QtuYBcKBPSfRINx2wfyVPKRun5Q?e=Tv0OS5",
-        "notes_embed_code": '<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;" src="https://www.canva.com/design/DAF9bFAd4wQ/GJpB2Hxu2eyjRDlrsbdFLw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe><a href="https://www.canva.com/design/DAF9bFAd4wQ/GJpB2Hxu2eyjRDlrsbdFLw/view?utm_content=DAF9bFAd4wQ&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Data Validation</a> by Console Flare',
+        "notes_embed_code": """<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9sGjoscE&#x2F;tZsnSI4oFVkphT3TH0fNrg&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9sGjoscE&#x2F;tZsnSI4oFVkphT3TH0fNrg&#x2F;view?utm_content=DAF9sGjoscE&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Excel Fundamentals</a> by Console Flare""",
         "questions": {
             "How many rows can Excel handle?": {
                 "type": "multiselect",
@@ -442,7 +445,6 @@ if selected_topic:
                 st.write(options["hint"])
 
     st.title(f"Your score: {score}/{total_questions}")
-
 
 
 
