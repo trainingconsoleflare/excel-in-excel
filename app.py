@@ -13,7 +13,7 @@ topics_data = {
             "How many rows can Excel handle?": {
                 "type": "radio",
                 "options": ["Select", "1 Million +", "11 Million +", "20 Million +"],
-                "correct_answer": "10 Million +",
+                "correct_answer": "1 Million +",
                 "hint": "Excel has 1048576 rows"
             },
             "Excel works with tabular data format": {
