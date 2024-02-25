@@ -270,6 +270,7 @@ def display_questions(questions):
 st.set_page_config(layout="wide")  # Optimize layout for mobile devices
 st.title("Excel Learning App")
 
+
 # Sidebar dropdown to select the topic
 selected_topic = st.sidebar.selectbox("Select Excel Topic", list(topics_data.keys()))
 
@@ -282,7 +283,8 @@ if selected_topic:
 st.header("Excel Notes")
 if selected_topic:
     st.write(f"Notes for {selected_topic}:")
-    st.write(topics_data[selected_topic]["notes_embed_code"], unsafe_allow_html=True)
+    with st.expander("Click here to view notes"):
+        st.write(topics_data[selected_topic]["notes_embed_code"], unsafe_allow_html=True)
 
 # Display questions for the selected topic
 st.header("Practice Questions")
