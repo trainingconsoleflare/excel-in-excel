@@ -265,10 +265,14 @@ def display_questions(questions):
 
     st.title(f"Your score: {score}/{len(questions)}")
 
+# Function to display notes content for a selected topic
+@st.cache
+def display_notes_content(topic):
+    return topics_data[topic]["notes_embed_code"]
 
 # Main code
 st.set_page_config(layout="wide")  # Optimize layout for mobile devices
-st.title("Excel Learning App")
+st.title("Excel Learning App By Console Flare")
 
 
 # Sidebar dropdown to select the topic
