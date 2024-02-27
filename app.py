@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 # Define a dictionary mapping topics to their corresponding questions, video links, and share drive links
 topics_data = {
@@ -12,8 +13,8 @@ topics_data = {
         "questions": {
             "How many rows can Excel handle?": {
                 "type": "radio",
-                "options": ["Select", "1 Million +", "11 Million +", "20 Million +"],
-                "correct_answer": "1 Million +",
+                "options": ["Select", "10 Million +", "11 Million +", "20 Million +"],
+                "correct_answer": "10 Million +",
                 "hint": "Excel has 1048576 rows"
             },
             "Excel works with tabular data format": {
@@ -207,7 +208,41 @@ topics_data = {
             }
 
         }
-    }
+    },
+    "Text Manipulation": {
+        "video_link": "https://youtu.be/6guuTX1Ml8U",
+        "share_drive_link": "https://arbrecreations-my.sharepoint.com/:b:/g/personal/abhishekm_arbre_in/EXcN4q_Pe8hGo1qs0f2QtuYBcKBPSfRINx2wfyVPKRun5Q?e=Tv0OS5",
+        "notes_embed_code": """<iframe loading="lazy" style="position: relative; width: 100%; height: 600px; max-height: 80vh; border: none; padding: 0; margin: 0; overflow: hidden;"
+      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF994xqhMo&#x2F;qW1wB_Je05v1JL-a7fd7eA&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+    </iframe>
+    <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF994xqhMo&#x2F;qW1wB_Je05v1JL-a7fd7eA&#x2F;view?utm_content=DAF994xqhMo&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Functions in Excel</a> by Console Flare""",
+        "questions": {
+            "How many rows can Excel handle?": {
+                "type": "radio",
+                "options": ["Select", "10 Million +", "11 Million +", "20 Million +"],
+                "correct_answer": "10 Million +",
+                "hint": "Excel has 1048576 rows"
+            },
+            "Excel works with tabular data format": {
+                "type": "radio",
+                "options": ["Select", "True", "False"],
+                "correct_answer": "True",
+                "hint": "Excel is primarily designed for working with tabular data."
+            },
+            "Excel is a product of": {
+                "type": "radio",
+                "options": ["Select", "Microsoft", "Yahoo"],
+                "correct_answer": "Microsoft",
+                "hint": "Excel is developed by Microsoft"
+            },
+            "Is there any sector that does not use Excel": {
+                "type": "radio",
+                "options": ["Select", "Yes", "No"],
+                "correct_answer": "No",
+                "hint": "Excel is used all around the world"
+            },
+        }
+    },
 
  
     
@@ -215,6 +250,10 @@ topics_data = {
     # Other topics follow...
 
 }
+
+def simulate_processing():
+    # Simulate processing for 3 seconds
+    time.sleep(3)
 
 # Function to display questions and get user answers
 def display_questions(questions):
